@@ -8,7 +8,7 @@ export default function App() {
     { text: 'create an app', key: '2'},
     { text: 'play on the switch', key: '3'}
   ]);
-  
+
   return (
     <View style={styles.container}>
       {/* header */}
@@ -16,7 +16,10 @@ export default function App() {
         {/* to form */}
         <View style={styles.list}>
           <FlatList 
-
+            data={todos}
+            renderItem={( item ) => (
+              <Text>{item.text}</Text>
+            )}
           />
         </View>
       </View>
