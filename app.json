@@ -1,0 +1,12 @@
+{
+  "name": "CrossPlatform-ToDoListApp",
+  "displayName": "CrossPlatform-ToDoListApp",
+  "expo": {
+    "name": "CrossPlatform-ToDoListApp",
+    "slug": "CrossPlatform-ToDoListApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
