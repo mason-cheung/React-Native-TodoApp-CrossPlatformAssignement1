@@ -11,6 +11,7 @@ import {
 
 
 export default function TodoItem({ item, pressHandler }) {
+
     const deleteTask = () => {
         Alert.alert(
             "Delete?",
@@ -26,12 +27,17 @@ export default function TodoItem({ item, pressHandler }) {
             { cancelable: false }
           );
     }
+
+    const checkBoxChange = () => {
+        Alert.alert("DONE DONE","")
+    }
   return (
     <TouchableOpacity onPress={deleteTask}>
       <Text style={styles.item}>{item.text}</Text>
       <CheckBox
         value={false}
         style={styles.checkbox}
+        onChange={checkBoxChange}
       ></CheckBox>
     </TouchableOpacity>
   );
