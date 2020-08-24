@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   Modal,
   CheckBox,
-  Alert
+  Alert,
 } from "react-native";
 
 
@@ -22,7 +22,7 @@ export default function TodoItem({ item, pressHandler }) {
                 onPress: () => console.log("Cancel Pressed"),
                 style: "cancel"
               },
-              { text: "delete", onPress: () => pressHandler(item.key) }
+              { text: "Delete", onPress: () => pressHandler(item.key) }
             ],
             { cancelable: false }
           );
@@ -32,13 +32,13 @@ export default function TodoItem({ item, pressHandler }) {
         Alert.alert("DONE DONE","")
     }
   return (
-    <TouchableOpacity onPress={deleteTask}>
-      <Text style={styles.item}>{item.text}</Text>
-      <CheckBox
-        value={false}
-        style={styles.checkbox}
-        onChange={checkBoxChange}
-      ></CheckBox>
+    <TouchableOpacity onPress={deleteTask} style={styles.item}>
+        <Text>{item.text}</Text>
+        <CheckBox
+          value={false}
+          style={styles.checkbox}
+          onChange={checkBoxChange}
+        ></CheckBox>
     </TouchableOpacity>
   );
 }
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderRadius: 10,
     flexDirection: "row",
+    justifyContent: 'space-between',
   },
   checkbox: {
     alignSelf: "flex-end",
