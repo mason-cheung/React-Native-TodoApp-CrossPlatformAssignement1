@@ -14,6 +14,7 @@ export default function App() {
     setTodos((prevTodos) => {
       return prevTodos.filter(todo => todo.key != key);
     })
+    //this.storeTodo()
     Toast.show('TODOS Deleted!', 500);
   }
 
@@ -25,6 +26,7 @@ export default function App() {
           ...prevTodos
         ];
       })
+      //this.storeTodo()
       Toast.show('TODOS Added!', 500);
     } else {
       Alert.alert('Oops!', 'Todos must be over 3 chars long!', [
@@ -50,6 +52,27 @@ export default function App() {
     </View>
   );
 }
+
+storeTodo = async (todos) => {
+  try {
+    const jsonValue = JSON.stringify(todos)
+    await AsyncStorage.setItem(key, jsonValue);
+  } catch(error) {
+    console.log(error)
+  }
+}
+
+retrieveTodo = async () => {
+  try {
+    const items = await AsyncStorage.getItem(key);
+    this.setState({expenseAmount:0})
+    return items != null ? JSON.parse(items) : null
+  } catch (error) {
+    // Error retrieving data
+    console.log(error)
+  }
+};
+
 
 const styles = StyleSheet.create({
   container: {
