@@ -33,7 +33,7 @@ export default function TodoItem({ item, pressHandler }) {
     }
   return (
     <TouchableOpacity onPress={deleteTask} style={styles.item}>
-        <Text>{item.text}</Text>
+        <Text style={styles.font}>{item.text}</Text>
         <CheckBox
           value={false}
           style={styles.checkbox}
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: "row",
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   checkbox: {
     alignSelf: "flex-end",
@@ -68,5 +69,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     textDecorationLine: 'line-through', textDecorationStyle: 'solid'
   },
+  font: {
+    fontSize: 16,
+  }
 });
 
