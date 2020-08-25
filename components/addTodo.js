@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, AsyncStorage, Alert } from 'react-native';
-import Toast from 'react-native-whc-toast';
+
 
 export default function AddTodo({ submitHandler }) {
 

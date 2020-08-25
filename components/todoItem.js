@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
     borderColor: "#bbb",
     borderWidth: 1,
     borderStyle: "solid",
-    borderRadius: 10,
+    borderRadius: 15,
     flexDirection: "row",
     justifyContent: 'space-between',
+    textAlignVertical: "center"
   },
   checkbox: {
     alignSelf: "flex-end",
