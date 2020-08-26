@@ -12,6 +12,8 @@ import {
 
 export default function TodoItem({ item, pressHandler }) {
 
+  const currDate = new Date().toLocaleDateString();
+
     const deleteTask = () => {
         Alert.alert(
             "Delete?",
@@ -29,10 +31,11 @@ export default function TodoItem({ item, pressHandler }) {
     }
 
     const checkBoxChange = () => {
-        Alert.alert("DONE DONE","")
+        Alert.alert("DONE","You can delete this todo at any time")
     }
   return (
     <TouchableOpacity onPress={deleteTask} style={styles.item}>
+      <Text>{currDate}</Text>
         <Text style={styles.font}>{item.text}</Text>
         <CheckBox
           value={false}

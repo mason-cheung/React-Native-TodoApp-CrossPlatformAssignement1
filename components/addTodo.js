@@ -11,6 +11,7 @@ export default function AddTodo({ submitHandler }) {
     return (
       <View>
         <TextInput
+          multiline
           style={styles.input}
           placeholder="New Todo..."
           onChangeText={changeHandler}
@@ -27,6 +28,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 8,
     height: 46,
+    padding: 8,
+    //margin: 10,
     borderWidth: 1,
     borderColor: "#bbb",
     borderRadius: 6,
